@@ -81,146 +81,129 @@ export default function Home() {
 
         <BeefCutsHeroCentered />
 
-        {/* ========================================= */}
-        {/* ORIGINAL HOMEPAGE CONTENT                 */}
-        {/* ========================================= */}
-
-        {/* ABOUT · PHILOSOPHY CTA — quote banner with overhanging cleaver */}
-        <section id="philosophy" className="mx-auto max-w-5xl px-6 py-20 sm:py-24 relative z-10 scroll-mt-24">
-        <div className="reveal relative">
-          {/* dark banner */}
-          <div className="relative overflow-hidden rounded-xl bg-[#241B16] text-[#FAF6EF] px-8 py-12 sm:px-14 sm:py-14 shadow-[0_24px_50px_-24px_rgba(36,27,22,0.5)] ring-1 ring-white/[0.06]">
-            {/* warm navy glow for depth */}
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{ background: "radial-gradient(circle at 0% 50%, rgba(138,21,56,0.12), transparent 60%)" }}
-            />
-            <div className="relative flex flex-col items-center text-center">
-              {/* top — eyebrow + quote, centered */}
-              <span className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[#C9A24B]">
-                <span className="h-px w-8 bg-[#C9A24B]/60" />
-                The Saqr Promise · وعد صقر
-                <span className="h-px w-8 bg-[#C9A24B]/60" />
-              </span>
-
-              {/* italic serif quote — the Saqr point of difference */}
-              <p className="mt-6 max-w-3xl font-[var(--font-serif)] italic text-2xl leading-snug text-[#FAF6EF] sm:text-[2rem] sm:leading-snug">
-                One standard, one promise — from trusted farms to your table,{" "}
-                <span className="not-italic text-[#C9A24B]">every cut is certified Halal.</span>
-              </p>
-
-              {/* divider */}
-              <span className="mt-9 h-px w-16 bg-white/15" />
-
-              {/* below — supporting copy in two columns */}
-              <div className="mt-9 grid max-w-3xl gap-8 text-[15px] leading-relaxed text-[#FAF6EF]/75 sm:grid-cols-2 sm:text-left">
-                <p>
-                  Saqr brings Qatar a new standard in premium meat — 100% Halal-certified
-                  beef and lamb, sourced from trusted farms and slaughtered strictly to
-                  Zabiha rites, then butchered by master craftsmen here in Doha.
-                </p>
-                <p>
-                  Owning every link — from sourcing and Halal slaughter to butchery,
-                  cold-chain handling and same-day delivery — is how we hold a single
-                  standard, and serve homes, hotels and restaurants the meat we would
-                  set on our own table.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* hand-drawn knife straddling the top edge — gently floats up and down */}
-          <img
-            src="/images/cleaver.png"
-            alt="Hand-drawn knife"
-            loading="lazy"
-            className="knife-bob pointer-events-none absolute -top-24 right-2 w-40 select-none drop-shadow-[0_16px_22px_rgba(0,0,0,0.4)] sm:-top-28 sm:right-8 sm:w-48 lg:-top-32 lg:w-56"
-          />
-        </div>
-      </section>
       </div>
 
-      {/* ABOUT THE COMPANY */}
-      <section id="about" className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24 z-10 scroll-mt-24">
-        <div className="absolute left-0 top-4 font-[var(--font-display)] text-[120px] sm:text-[200px] lg:text-[280px] leading-none tracking-tighter font-bold text-[#8A1538]/[0.06] pointer-events-none select-none">
-          SAQR
-        </div>
-        <div className="relative grid items-center gap-10 md:grid-cols-[1fr_1.3fr] lg:gap-16">
-          {/* LEFT — about copy */}
-          <div className="reveal">
-            <span className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[#8A1538]">
-              <span className="h-px w-6 bg-[#8A1538]/60" />
-              Who We Are
-            </span>
-            <h3 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold uppercase tracking-wide leading-[1.1] mb-6">
-              <VanishText>
-                Qatar&apos;s premium <span className="text-[#8A1538]">Halal beef &amp; lamb</span>, source to table
-              </VanishText>
-            </h3>
-            <div className="max-w-xl space-y-4 font-[var(--font-serif)] text-[14px] leading-relaxed text-gray-600">
-              <p>
-                <span className="font-semibold text-[#241B16]">Saqr</span> (صقر) is a Qatari premium meat house dedicated to the best-practice supply of 100% Halal-certified beef and lamb to homes, hotels and restaurants across Qatar.
+      {/* THE SAQR PROMISE — full-bleed maroon manifesto band */}
+      <section id="philosophy" className="relative z-10 overflow-hidden bg-[#8A1538] text-[#FAF6EF] scroll-mt-24">
+        {/* giant faint Arabic watermark */}
+        <span aria-hidden className="pointer-events-none absolute -right-[4vw] top-1/2 -translate-y-1/2 select-none font-[var(--font-serif)] text-[34vw] leading-none text-white/[0.05]">
+          وعد
+        </span>
+        {/* thin gold hairlines top + bottom */}
+        <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-[#C9A24B]/40" />
+        <div aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-[#C9A24B]/40" />
+
+        <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28">
+          <div className="reveal grid gap-12 lg:grid-cols-[1.45fr_1fr] lg:items-center lg:gap-20">
+            {/* LEFT — manifesto quote */}
+            <div>
+              <span className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.35em] text-[#E0C074]">
+                The Saqr Promise
+                <span className="text-[#FAF6EF]/35">·</span>
+                <span className="font-[var(--font-serif)] text-base tracking-normal">وعد صقر</span>
+              </span>
+              <p className="mt-7 font-[var(--font-display)] text-[2rem] font-medium leading-[1.16] sm:text-[2.8rem] sm:leading-[1.12]">
+                One standard. One promise. From trusted farms to your table,{" "}
+                <span className="font-[var(--font-serif)] italic text-[#E0C074]">every cut is certified Halal.</span>
               </p>
-              <p>
-                From careful sourcing and strict Zabiha slaughter to expert butchery, cold-chain handling and delivery to your door, every step is held to a single, uncompromising standard.
+              <p className="mt-8 max-w-xl text-[14.5px] leading-relaxed text-[#FAF6EF]/70">
+                Saqr brings Qatar a new standard in premium meat — 100% Halal-certified beef
+                and lamb, sourced from trusted farms, slaughtered strictly to Zabiha rites and
+                butchered by master craftsmen here in Doha.
               </p>
             </div>
 
-            <a
-              href="#contact"
-              className="group relative mt-9 inline-flex items-center overflow-hidden border border-[#8A1538] px-7 py-3 text-[11px] font-bold uppercase tracking-widest text-[#8A1538] transition-colors hover:text-white"
-            >
-              <span className="absolute inset-0 -translate-x-full bg-[#8A1538] transition-transform duration-500 group-hover:translate-x-0" />
-              <span className="relative">Get in touch</span>
-            </a>
+            {/* RIGHT — numbered promise pillars */}
+            <div className="border-y border-white/15 divide-y divide-white/15">
+              {[
+                { n: "01", t: "Halal, always", d: "Zabiha-certified, no exceptions." },
+                { n: "02", t: "Owned end-to-end", d: "Sourcing, slaughter, butchery, delivery." },
+                { n: "03", t: "Our own table", d: "We sell only what we'd serve at home." },
+              ].map((p) => (
+                <div key={p.n} className="flex items-baseline gap-5 py-5">
+                  <span className="font-[var(--font-display)] text-2xl font-bold text-[#E0C074]">{p.n}</span>
+                  <div>
+                    <div className="font-[var(--font-display)] text-lg font-semibold uppercase tracking-wide">{p.t}</div>
+                    <p className="mt-1 text-[13px] text-[#FAF6EF]/65">{p.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHO WE ARE — editorial split + stat strip + numbered stepper */}
+      <section id="about" className="relative z-10 mx-auto max-w-6xl px-6 py-20 sm:py-24 scroll-mt-24">
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+          {/* LEFT — content */}
+          <div className="reveal">
+            <div className="flex items-center gap-3">
+              <span className="font-[var(--font-display)] text-[13px] font-bold uppercase tracking-[0.4em] text-[#8A1538]">About</span>
+              <span className="h-px w-16 bg-[#8A1538]/30" />
+              <span className="font-[var(--font-serif)] text-[#C9A24B]">من نحن</span>
+            </div>
+            <h2 className="mt-6 font-[var(--font-display)] text-[2rem] font-semibold leading-[1.12] text-[#241B16] md:text-[2.6rem]">
+              A Qatari meat house, built on a <span className="text-[#8A1538]">single standard</span>.
+            </h2>
+            <div className="mt-6 max-w-xl space-y-4 font-[var(--font-serif)] text-[15px] leading-relaxed text-[#241B16]/70">
+              <p>
+                <span className="font-semibold text-[#241B16]">Saqr</span> (صقر) supplies 100% Halal-certified beef
+                and lamb to homes, hotels and restaurants across Qatar — sourced with care, butchered with craft,
+                delivered with speed.
+              </p>
+              <p>
+                From farm to door we own the links that matter most, and hold every one of them to a single,
+                uncompromising standard.
+              </p>
+            </div>
+
+            {/* stat strip */}
+            <div className="mt-9 grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-[#8A1538]/15 bg-[#8A1538]/15">
+              {[
+                { k: "100%", v: "Halal certified" },
+                { k: "5", v: "Steps we own" },
+                { k: "Doha", v: "Same-day delivery" },
+              ].map((s) => (
+                <div key={s.k} className="bg-[#FAF6EF] px-3 py-5 text-center">
+                  <div className="font-[var(--font-display)] text-2xl font-bold text-[#8A1538] md:text-3xl">{s.k}</div>
+                  <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.15em] text-[#241B16]/55">{s.v}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* RIGHT — black angus cattle, framed in a photographic medallion */}
-          <div className="relative flex items-center justify-center py-6">
-            {/* soft radial backdrop for depth */}
-            <div
-              className="absolute left-1/2 top-1/2 aspect-square w-[94%] -translate-x-1/2 -translate-y-1/2 rounded-full"
-              style={{ background: "radial-gradient(circle, #F1E9DA 0%, #F1E9DA 55%, transparent 72%)" }}
-            />
-
-            {/* circular photo medallion */}
-            <div className="genie relative z-10 aspect-square w-[84%] overflow-hidden rounded-full shadow-2xl ring-1 ring-[#241B16]/10">
+          {/* RIGHT — rectangular image with an offset gold frame */}
+          <div className="reveal relative">
+            <div aria-hidden className="absolute -right-3 -top-3 bottom-6 left-6 rounded-sm border border-[#C9A24B]/60" />
+            <div className="relative overflow-hidden rounded-sm shadow-[0_30px_60px_-30px_rgba(36,27,22,0.55)]">
               <img
                 src="/images/angus-cattle.jpg"
                 alt="Premium Angus cattle on open pasture"
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="aspect-[4/5] w-full object-cover"
               />
-              {/* warm inner vignette to match the editorial palette */}
-              <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_70px_rgba(36,27,22,0.4)]" />
-              {/* thin inner ring */}
-              <div className="pointer-events-none absolute inset-[6px] rounded-full border border-white/25" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#241B16]/75 to-transparent p-5">
+                <span className="font-[var(--font-display)] text-sm font-bold uppercase tracking-[0.2em] text-[#FAF6EF]">
+                  Raised right · 100% Halal
+                </span>
+              </div>
             </div>
-
-            {/* caption badge */}
-            <span className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-[#8A1538] px-4 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-white shadow-lg">
-              100% Halal
-            </span>
           </div>
         </div>
 
-        {/* paddock-to-plate capability chain — full width, single row */}
-        <div className="reveal mt-14 flex flex-wrap items-center justify-center gap-x-3 gap-y-3">
-          {["Trusted Farms", "Halal Slaughter", "Expert Butchery", "Cold Chain", "Doha Delivery"].map((step, i) => (
-            <div key={step} className="flex shrink-0 items-center gap-3">
-              {i > 0 && (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A1538" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="opacity-50">
-                  <path d="M9 6l6 6-6 6" />
-                </svg>
-              )}
-              <span className="whitespace-nowrap rounded-full border border-gray-300/80 bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#241B16]">
-                {step}
-              </span>
-            </div>
-          ))}
+        {/* numbered stepper — replaces the arrow-pill chain */}
+        <div className="reveal mt-16 border-t border-[#8A1538]/15 pt-10">
+          <div className="grid gap-y-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-6">
+            {["Trusted Farms", "Halal Slaughter", "Expert Butchery", "Cold Chain", "Doha Delivery"].map((step, i) => (
+              <div key={step} className="relative flex flex-col gap-3 lg:pr-6">
+                <span className="font-[var(--font-display)] text-3xl font-bold text-[#8A1538]/25">0{i + 1}</span>
+                <span className="font-[var(--font-display)] text-sm font-bold uppercase tracking-[0.1em] text-[#241B16]">{step}</span>
+                {i < 4 && <span aria-hidden className="absolute right-0 top-4 hidden h-px w-6 bg-[#C9A24B] lg:block" />}
+              </div>
+            ))}
+          </div>
         </div>
-
-        <Divider />
       </section>
 
       {/* HALAL ASSURANCE */}
@@ -285,115 +268,118 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MARBLING — editorial band that begins at the middle of the steak photo */}
-      <section id="quality" className="relative overflow-hidden text-white py-20 sm:py-24 z-10 scroll-mt-0">
-        <div className="relative mx-auto max-w-4xl px-6">
-          {/* TOP — framed steak photo: top half over the cream above, bottom half over the dark band */}
-          {/* Wrapper stays static so the dark band never animates */}
-          <div className="relative mx-auto w-full max-w-2xl">
-            {/* DARK BAND — full-bleed, anchored to start at the photo's vertical middle (clipped to the section) */}
-            <div
-              aria-hidden
-              className="absolute left-1/2 top-1/2 -z-10 h-[300vh] w-screen -translate-x-1/2 bg-[#16100C]"
-            >
-              {/* soft navy glow for depth */}
-              <div
-                className="absolute inset-x-0 top-0 h-[700px]"
-                style={{ background: "radial-gradient(circle at 75% 12%, rgba(138,21,56,0.12), transparent 55%)" }}
-              />
-            </div>
-            {/* framed image — only this animates in (clean fade-up), band stays steady */}
-            <div className="reveal relative z-10 border border-white/15 bg-[#16100C] p-2.5 shadow-2xl">
-              <img
-                src="/images/steak-board.jpg"
-                alt="Premium marbled steak on a board"
-                loading="lazy"
-                className="aspect-[16/10] w-full object-cover"
-              />
+      {/* QUALITY — full-bleed dark split: content left, edge-bleed image right, metric rows */}
+      <section id="quality" className="relative z-10 overflow-hidden bg-[#16100C] text-[#FAF6EF] scroll-mt-0">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{ background: "radial-gradient(circle at 78% 28%, rgba(138,21,56,0.20), transparent 55%)" }}
+        />
+        <div className="relative grid lg:grid-cols-2">
+          {/* LEFT — content */}
+          <div className="reveal flex flex-col justify-center px-6 py-20 sm:py-24 lg:py-28">
+            <div className="mx-auto w-full max-w-xl lg:ml-auto lg:mr-0 lg:max-w-lg lg:pr-14">
+              <span className="font-[var(--font-display)] text-[13px] font-bold uppercase tracking-[0.4em] text-[#E0C074]">
+                Quality · الجودة
+              </span>
+              <h2 className="mt-5 font-[var(--font-display)] text-[2rem] font-semibold leading-[1.12] md:text-[2.6rem]">
+                Marbling you can measure, <span className="text-[#E0C074]">not assume</span>.
+              </h2>
+              <p className="mt-6 text-[14.5px] leading-relaxed text-[#FAF6EF]/70">
+                Marbling — the fine web of fat within the muscle — is the key to flavour, juiciness and aroma.
+                Every Saqr carcass is hand-assessed for marble score and selected against strict premium-grade
+                standards, then handled on an unbroken cold chain from our butchery to your door.
+              </p>
+
+              {/* metric rows */}
+              <dl className="mt-9 divide-y divide-white/12 border-y border-white/12">
+                {[
+                  { k: "Marble score", v: "Hand-assessed, every carcass" },
+                  { k: "Grade", v: "Premium selection only" },
+                  { k: "Halal", v: "100% Zabiha certified" },
+                  { k: "Cold chain", v: "Unbroken, farm to door" },
+                ].map((m) => (
+                  <div key={m.k} className="flex items-center justify-between gap-6 py-4">
+                    <dt className="font-[var(--font-display)] text-sm font-bold uppercase tracking-[0.12em] text-[#FAF6EF]">{m.k}</dt>
+                    <dd className="text-right text-[13px] text-[#FAF6EF]/60">{m.v}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
 
-          {/* CONTENT — centered in the band */}
-          <div className="reveal relative mx-auto mt-16 max-w-2xl text-center">
-            {/* segmented editorial divider — centered */}
-            <div className="mb-7 flex items-center justify-center gap-2.5 text-white/30">
-              <span className="h-px w-12 bg-current" />
-              <span className="h-1 w-1 rotate-45 bg-current" />
-              <span className="h-px w-5 bg-current" />
-              <span className="h-1 w-1 rotate-45 bg-current" />
-              <span className="h-px w-12 bg-current" />
-            </div>
-
-            <h3 className="font-[var(--font-display)] text-3xl md:text-4xl font-light uppercase leading-[1.15] tracking-[0.12em] text-white/85">
-              <VanishText>
-                Marbling &amp; Halal,
-                <span className="mt-1 block">Graded for Quality</span>
-              </VanishText>
-            </h3>
-
-            <div className="mt-7 space-y-4 font-[var(--font-serif)] text-[13px] leading-relaxed text-white/45">
-              <p>
-                Marbling, the even distribution of fat within the muscle, is the principal indicator of beef quality and the key to its flavour and aroma. Every Saqr carcass is hand-assessed for <span className="font-semibold text-white/75">marble score</span> and selected against strict <span className="font-semibold text-white/75">premium-grade standards</span>, so eating quality is measured, not assumed.
-              </p>
-              <p>
-                That consistency is no accident. Saqr is <span className="font-semibold text-white/75">100% Halal-certified</span>, with control of the links that matter most — from trusted sourcing and Zabiha slaughter through expert butchery, retail packing and cold-chain delivery across Qatar.
-              </p>
-              <p>
-                Controlling each step, from <span className="font-semibold text-white/75">source to table</span>, is how we guarantee the provenance, the Halal integrity and the grading behind every cut. It&apos;s the discipline that makes Saqr a name Qatar can trust for premium meat.
-              </p>
-            </div>
+          {/* RIGHT — image bleeding to the edge */}
+          <div className="reveal relative min-h-[320px] lg:min-h-full">
+            <img
+              src="/images/steak-board.jpg"
+              alt="Premium marbled steak on a board"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div aria-hidden className="absolute inset-0 hidden bg-gradient-to-r from-[#16100C] via-transparent to-transparent lg:block" />
+            <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#16100C]/85 to-transparent lg:hidden" />
           </div>
         </div>
       </section>
 
-      {/* FEED & FINISHING */}
-      <section className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24 z-10">
-        <div className="grid items-center gap-10 md:grid-cols-[1.2fr_1fr] lg:gap-16">
-          {/* LEFT — grain-fed cattle, framed in a photographic medallion */}
-          <div className="relative flex items-center justify-center py-6">
-            {/* soft backdrop disc for depth */}
-            <div className="absolute left-1/2 top-1/2 aspect-square w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F1E9DA]" />
-
-            {/* circular photo medallion */}
-            <div className="genie relative z-10 aspect-square w-[84%] overflow-hidden rounded-full shadow-2xl ring-1 ring-[#241B16]/10">
-              <img
-                src="/images/feedlot-cattle.jpg"
-                alt="Premium grain-finished cattle from a trusted Saqr partner farm"
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-              {/* warm inner vignette to match the editorial palette */}
-              <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_70px_rgba(36,27,22,0.4)]" />
-              {/* thin inner ring */}
-              <div className="pointer-events-none absolute inset-[6px] rounded-full border border-white/25" />
-            </div>
-
-            {/* caption badge */}
-            <span className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-[#8A1538] px-4 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-white shadow-lg">
-              Grain-Finished
-            </span>
+      {/* SOURCING & PROVENANCE — three-step farm-to-door journey cards */}
+      <section className="relative z-10 mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <div className="reveal max-w-2xl">
+          <div className="flex items-center gap-3">
+            <span className="font-[var(--font-display)] text-[13px] font-bold uppercase tracking-[0.4em] text-[#8A1538]">Provenance</span>
+            <span className="h-px w-16 bg-[#8A1538]/30" />
+            <span className="font-[var(--font-serif)] text-[#C9A24B]">المصدر</span>
           </div>
+          <h2 className="mt-5 font-[var(--font-display)] text-[2rem] font-semibold leading-[1.12] text-[#241B16] md:text-[2.6rem]">
+            From trusted farm to your door — <span className="text-[#8A1538]">nothing left to chance</span>.
+          </h2>
+        </div>
 
-          {/* RIGHT — copy */}
-          <div className="reveal">
-            <span className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[#8A1538]">
-              <span className="h-px w-6 bg-[#8A1538]/60" />
-              Sourcing &amp; Provenance
-            </span>
-            <h3 className="font-[var(--font-display)] text-3xl md:text-4xl font-bold uppercase tracking-wide leading-[1.1] mb-6">
-              <VanishText>
-                Pasture Raised, <span className="text-[#8A1538]">Carefully Sourced</span>
-              </VanishText>
-            </h3>
-            <div className="max-w-xl space-y-4 font-[var(--font-serif)] text-[14px] leading-relaxed text-gray-600">
-              <p>
-                Our cattle and lambs are raised by trusted partner farms on open, natural pasture, then grain-finished to develop rich, even marbling. We select only the animals that meet our standard before they ever carry the Saqr name.
-              </p>
-              <p>
-                Every animal is then slaughtered strictly to Zabiha Halal rites under qualified supervision, and handled on an unbroken cold chain to lock in freshness. From farm to your door, the provenance, Halal integrity and quality behind each cut stay under our control.
-              </p>
-            </div>
-          </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              img: "/images/feedlot-cattle.jpg",
+              step: "Sourced",
+              t: "Trusted partner farms",
+              d: "Cattle and lambs raised on open pasture and grain-finished for rich, even marbling. Only animals that meet our standard carry the Saqr name.",
+            },
+            {
+              img: "/images/ribeye.jpg",
+              step: "Butchered",
+              t: "Halal, cut with craft",
+              d: "Slaughtered to strict Zabiha rites under qualified supervision, then broken down to order by master butchers in our Doha facility.",
+            },
+            {
+              img: "/images/steak-sliced.jpg",
+              step: "Delivered",
+              t: "Cold chain to your door",
+              d: "Vacuum-sealed and handled on an unbroken cold chain, so freshness and Halal integrity arrive exactly as they left the bench.",
+            },
+          ].map((c, i) => (
+            <article
+              key={c.step}
+              className="group reveal overflow-hidden rounded-2xl bg-white shadow-[0_20px_50px_-32px_rgba(36,27,22,0.5)] ring-1 ring-[#241B16]/10"
+            >
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={c.img}
+                  alt={c.t}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <span className="absolute left-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-[#8A1538] font-[var(--font-display)] text-sm font-bold text-[#E0C074] shadow-lg">
+                  {i + 1}
+                </span>
+                <span className="absolute bottom-3 left-4 rounded-full bg-[#FAF6EF]/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#8A1538]">
+                  {c.step}
+                </span>
+              </div>
+              <div className="p-6">
+                <h3 className="font-[var(--font-display)] text-lg font-bold uppercase tracking-[0.06em] text-[#241B16]">{c.t}</h3>
+                <p className="mt-2 font-[var(--font-serif)] text-[13.5px] leading-relaxed text-[#241B16]/65">{c.d}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
