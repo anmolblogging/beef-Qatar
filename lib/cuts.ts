@@ -10,7 +10,7 @@ export type Steak = {
   name: string;
   sub: string;
   img: string;
-  /** Trade name + AUS-MEAT style reference, shown under the title. */
+  /** Trade name + cut reference, shown under the title. */
   code: string;
   description: string;
   methods: CookMethod[];
@@ -45,7 +45,7 @@ export const PRIMALS: Record<string, Primal> = {
     title: "RIB CUTS",
     label: "Rib",
     items: [
-      { name: "RIBEYE STEAK", sub: "(Prime Rib)", img: "/images/ribeye.jpg", code: "Cube Roll · 2090", description: "Cut from the rib primal, the ribeye is prized for its abundant marbling and the soft cap of fat that frames the eye. As it cooks, that fat renders through the muscle for a juicy, full-bodied flavour that defines premium Australian beef.", methods: ["grill", "pan", "roast"] },
+      { name: "RIBEYE STEAK", sub: "(Prime Rib)", img: "/images/ribeye.jpg", code: "Cube Roll · 2090", description: "Cut from the rib primal, the ribeye is prized for its abundant marbling and the soft cap of fat that frames the eye. As it cooks, that fat renders through the muscle for a juicy, full-bodied flavour that defines premium Halal beef.", methods: ["grill", "pan", "roast"] },
       { name: "BACK RIBS", sub: "(Beef Ribs)", img: "/images/steak-board.jpg", code: "Rib Prepared · 2335", description: "The meat between the rib bones — lean, flavourful and made for low, slow cooking. Smoke or roast until tender and the connective tissue melts into the meat.", methods: ["roast", "braise"] },
       { name: "BEEF MINCE", sub: "(Trim)", img: "/images/beef-mince.jpg", code: "Trim Mince · 2580", description: "Coarse-ground from the lean trim left after the rib is portioned, so nothing premium is wasted. A clean, all-purpose mince with a true beefy flavour — brown it hard for ragù and bolognese, or pack it into burgers, meatballs and koftas.", methods: ["pan", "braise"] },
     ],
@@ -160,28 +160,28 @@ export const COOK_LABELS: Record<CookMethod, string> = {
 };
 
 /* ------------------------------------------------------------------ */
-/*  Product specifications — ACC is a vertically integrated producer,  */
-/*  so each cut page reads as a wholesale/retail spec sheet (formats,   */
-/*  packaging, grade, finish) rather than a consumer recipe.           */
+/*  Product specifications — Saqr supplies premium Halal cuts, so each  */
+/*  cut page reads as a wholesale/retail spec sheet (formats,           */
+/*  packaging, grade, Halal) rather than a consumer recipe.            */
 /* ------------------------------------------------------------------ */
 export type Spec = { label: string; value: string };
 
-/** Pulls the AUS-MEAT number out of a code string like "Cube Roll · 2090". */
+/** Pulls the cut-code number out of a code string like "Cube Roll · 2090". */
 export const ausMeatNo = (code: string) => code.split("·").pop()?.trim() ?? "—";
 
 export function specsFor(primal: Primal, steak: Steak): Spec[] {
   return [
     { label: "Primal", value: primal.label },
-    { label: "AUS-MEAT No.", value: ausMeatNo(steak.code) },
-    { label: "Grade", value: "MSA Graded" },
-    { label: "Origin", value: "100% Australian" },
+    { label: "Cut Code", value: ausMeatNo(steak.code) },
+    { label: "Grade", value: "Premium" },
+    { label: "Halal", value: "Certified" },
   ];
 }
 
-/** Available chilled/frozen formats — offered across the ACC range. */
+/** Available chilled/frozen formats — offered across the Saqr range. */
 export const PRODUCT_FORMATS = ["Chilled", "Frozen"];
 
-/** Retail-ready & bulk packaging options from ACC's processing facility. */
+/** Retail-ready & bulk packaging options from Saqr's butchery. */
 export const PACKAGING = [
   "Vacuum pack",
   "MAP retail tray",
@@ -189,8 +189,8 @@ export const PACKAGING = [
   "Bulk carton",
 ];
 
-/** Channels ACC supplies this product into. */
-export const SUPPLY_CHANNELS = ["Retail", "Foodservice", "Export"];
+/** Channels Saqr supplies this product into. */
+export const SUPPLY_CHANNELS = ["Retail", "Hotels & Restaurants", "Wholesale"];
 
 /** Other cuts to surface at the foot of a cut page — same primal first. */
 export function relatedCuts(

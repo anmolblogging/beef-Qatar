@@ -5,7 +5,7 @@ import {
   Beef,
   Hash,
   Award,
-  MapPin,
+  ShieldCheck,
   Snowflake,
   Package,
 } from "lucide-react";
@@ -24,9 +24,9 @@ import {
 
 const SPEC_ICON: Record<string, typeof Beef> = {
   Primal: Beef,
-  "AUS-MEAT No.": Hash,
+  "Cut Code": Hash,
   Grade: Award,
-  Origin: MapPin,
+  Halal: ShieldCheck,
 };
 
 export function generateStaticParams() {
@@ -40,9 +40,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const found = getSteakBySlug(slug);
-  if (!found) return { title: "Cut not found — ACC" };
+  if (!found) return { title: "Cut not found — Saqr" };
   return {
-    title: `${found.steak.name} — ACC`,
+    title: `${found.steak.name} — Saqr`,
     description: found.steak.description,
   };
 }
@@ -60,7 +60,7 @@ export default async function CutDetailPage({
   const related = relatedCuts(primal.id, steak.name, 3);
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#fcfaf6] font-[var(--font-sans)] text-[#2c2623]">
+    <main className="relative min-h-screen overflow-x-hidden bg-[#FAF6EF] font-[var(--font-sans)] text-[#241B16]">
       <Navbar />
 
       <section className="mx-auto max-w-6xl px-6 pt-32 pb-20 lg:pt-36">
@@ -68,12 +68,12 @@ export default async function CutDetailPage({
         <div className="flex flex-col items-start">
           <Link
             href="/#cuts"
-            className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-[#2c2623]/55 transition-colors hover:text-[#191851]"
+            className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-[#241B16]/55 transition-colors hover:text-[#8A1538]"
           >
             ← The Cuts
           </Link>
           <CowMini active={primal.id} className="w-28 sm:w-32" />
-          <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.4em] text-[#b9ad9c]">
+          <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.4em] text-[#B7A98E]">
             {primal.label} Primal
           </span>
         </div>
@@ -82,11 +82,11 @@ export default async function CutDetailPage({
         <div className="relative mx-auto -mt-6 w-full max-w-3xl">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-0 aspect-square w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#efe9e0] sm:w-[440px] lg:w-[520px]"
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-0 aspect-square w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EFE6D6] sm:w-[440px] lg:w-[520px]"
           />
 
           <div className="relative z-10 flex justify-center py-6">
-            <div className="aspect-square w-[230px] overflow-hidden rounded-full shadow-[0_36px_60px_-24px_rgba(28,26,25,0.55)] ring-1 ring-black/5 sm:w-[330px] lg:w-[400px]">
+            <div className="aspect-square w-[230px] overflow-hidden rounded-full shadow-[0_36px_60px_-24px_rgba(36,27,22,0.55)] ring-1 ring-black/5 sm:w-[330px] lg:w-[400px]">
               <img src={steak.img} alt={steak.name} className="h-full w-full object-cover" />
             </div>
           </div>
@@ -98,30 +98,30 @@ export default async function CutDetailPage({
           {/* LEFT — identity, description, key specs, actions */}
           <div>
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-16 border-t-2 border-dashed border-[#2c2623]/40" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#191851]">Retail Cut</span>
+              <span className="h-px w-16 border-t-2 border-dashed border-[#241B16]/40" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#8A1538]">Retail Cut</span>
             </div>
 
-            <h1 className="font-[var(--font-display)] text-3xl font-bold uppercase leading-tight tracking-[0.04em] text-[#2c2623] sm:text-4xl lg:text-5xl">
+            <h1 className="font-[var(--font-display)] text-3xl font-bold uppercase leading-tight tracking-[0.04em] text-[#241B16] sm:text-4xl lg:text-5xl">
               {steak.name}
-              <span className="text-[#2c2623]/35">, {steak.code}</span>
+              <span className="text-[#241B16]/35">, {steak.code}</span>
             </h1>
 
-            <p className="mt-3 font-[var(--font-serif)] text-base italic text-[#2c2623]/55">{steak.sub}</p>
+            <p className="mt-3 font-[var(--font-serif)] text-base italic text-[#241B16]/55">{steak.sub}</p>
 
-            <p className="mt-6 text-[15px] leading-relaxed text-[#2c2623]/75">{steak.description}</p>
+            <p className="mt-6 text-[15px] leading-relaxed text-[#241B16]/75">{steak.description}</p>
 
             {/* key specs */}
-            <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-[#2c2623]/10 pt-7 sm:grid-cols-4">
+            <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-[#241B16]/10 pt-7 sm:grid-cols-4">
               {specs.map((s) => {
                 const Icon = SPEC_ICON[s.label] ?? Beef;
                 return (
                   <div key={s.label} className="flex flex-col gap-1.5">
-                    <dt className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-[#2c2623]/45">
-                      <Icon className="h-3.5 w-3.5 text-[#191851]" strokeWidth={1.8} />
+                    <dt className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-[#241B16]/45">
+                      <Icon className="h-3.5 w-3.5 text-[#8A1538]" strokeWidth={1.8} />
                       {s.label}
                     </dt>
-                    <dd className="text-[13px] font-semibold text-[#2c2623]">{s.value}</dd>
+                    <dd className="text-[13px] font-semibold text-[#241B16]">{s.value}</dd>
                   </div>
                 );
               })}
@@ -130,14 +130,14 @@ export default async function CutDetailPage({
             {/* actions */}
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
-                href="mailto:enquiries@accbeef.net.au"
-                className="bg-[#191851] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.22em] text-white transition-opacity hover:opacity-85"
+                href="mailto:enquiries@saqr.qa"
+                className="bg-[#8A1538] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.22em] text-white transition-opacity hover:opacity-85"
               >
                 Enquire about this cut
               </a>
               <a
-                href="mailto:enquiries@accbeef.net.au?subject=Spec%20sheet%20request"
-                className="border-2 border-[#191851] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#191851] transition-colors hover:bg-[#191851] hover:text-white"
+                href="mailto:enquiries@saqr.qa?subject=Spec%20sheet%20request"
+                className="border-2 border-[#8A1538] px-6 py-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#8A1538] transition-colors hover:bg-[#8A1538] hover:text-white"
               >
                 Request spec sheet
               </a>
@@ -145,22 +145,22 @@ export default async function CutDetailPage({
           </div>
 
           {/* RIGHT — product specification card */}
-          <div className="rounded-2xl bg-white/60 p-7 ring-1 ring-[#2c2623]/10 sm:p-8 lg:p-9">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#191851]">
+          <div className="rounded-2xl bg-white/60 p-7 ring-1 ring-[#241B16]/10 sm:p-8 lg:p-9">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#8A1538]">
               Product Specification
             </span>
 
             {/* formats */}
             <div className="mt-6">
-              <h3 className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#2c2623]/70">
-                <Snowflake className="h-4 w-4 text-[#2c2623]/50" strokeWidth={1.8} />
+              <h3 className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#241B16]/70">
+                <Snowflake className="h-4 w-4 text-[#241B16]/50" strokeWidth={1.8} />
                 Available formats
               </h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {PRODUCT_FORMATS.map((f) => (
                   <span
                     key={f}
-                    className="rounded-full border border-[#2c2623]/15 bg-[#fcfaf6] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#2c2623]/75"
+                    className="rounded-full border border-[#241B16]/15 bg-[#FAF6EF] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#241B16]/75"
                   >
                     {f}
                   </span>
@@ -170,14 +170,14 @@ export default async function CutDetailPage({
 
             {/* packaging */}
             <div className="mt-7">
-              <h3 className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#2c2623]/70">
-                <Package className="h-4 w-4 text-[#2c2623]/50" strokeWidth={1.8} />
+              <h3 className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#241B16]/70">
+                <Package className="h-4 w-4 text-[#241B16]/50" strokeWidth={1.8} />
                 Packaging
               </h3>
               <ul className="mt-3 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
                 {PACKAGING.map((p) => (
-                  <li key={p} className="flex items-start gap-2.5 text-[14px] text-[#2c2623]/80">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-[#191851]" />
+                  <li key={p} className="flex items-start gap-2.5 text-[14px] text-[#241B16]/80">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-[#8A1538]" />
                     {p}
                   </li>
                 ))}
@@ -185,12 +185,12 @@ export default async function CutDetailPage({
             </div>
 
             {/* supply channels */}
-            <div className="mt-7 border-t border-[#2c2623]/10 pt-6">
-              <h3 className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2c2623]/70">Supplied to</h3>
-              <p className="mt-2 text-[14px] text-[#2c2623]/80">{SUPPLY_CHANNELS.join(" · ")}</p>
-              <p className="mt-4 font-[var(--font-serif)] text-[13px] italic leading-relaxed text-[#2c2623]/55">
-                Cut and packed to your specification through Australia&apos;s largest vertically
-                integrated beef supply chain — bred, fed and processed under one roof.
+            <div className="mt-7 border-t border-[#241B16]/10 pt-6">
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#241B16]/70">Supplied to</h3>
+              <p className="mt-2 text-[14px] text-[#241B16]/80">{SUPPLY_CHANNELS.join(" · ")}</p>
+              <p className="mt-4 font-[var(--font-serif)] text-[13px] italic leading-relaxed text-[#241B16]/55">
+                Cut and packed to your specification at Saqr&apos;s own butchery in Doha —
+                sourced, Halal-slaughtered and prepared to order.
               </p>
             </div>
           </div>
@@ -200,12 +200,12 @@ export default async function CutDetailPage({
       {/* ─────────────────────────────────────────────────────────── */}
       {/*  MORE CUTS                                                    */}
       {/* ─────────────────────────────────────────────────────────── */}
-      <section className="border-t border-[#2c2623]/10 bg-white/40">
+      <section className="border-t border-[#241B16]/10 bg-white/40">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mb-10 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-[#2c2623]/20" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-[#2c2623]/45">More Cuts</span>
-            <span className="h-px w-12 bg-[#2c2623]/20" />
+            <span className="h-px w-12 bg-[#241B16]/20" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-[#241B16]/45">More Cuts</span>
+            <span className="h-px w-12 bg-[#241B16]/20" />
           </div>
 
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
@@ -213,7 +213,7 @@ export default async function CutDetailPage({
               <Link
                 key={`${primalId}-${s.name}`}
                 href={`/cuts/${steakSlug(primalId, s.name)}`}
-                className="group flex items-center gap-5 rounded-xl bg-white/70 p-5 ring-1 ring-[#2c2623]/10 transition-shadow hover:shadow-[0_20px_40px_-26px_rgba(28,26,25,0.6)]"
+                className="group flex items-center gap-5 rounded-xl bg-white/70 p-5 ring-1 ring-[#241B16]/10 transition-shadow hover:shadow-[0_20px_40px_-26px_rgba(36,27,22,0.6)]"
               >
                 <div className="aspect-square w-20 shrink-0 overflow-hidden rounded-full ring-1 ring-black/5">
                   <img
@@ -223,11 +223,11 @@ export default async function CutDetailPage({
                   />
                 </div>
                 <div>
-                  <h4 className="font-[var(--font-display)] text-sm font-bold uppercase tracking-[0.08em] text-[#2c2623] transition-colors group-hover:text-[#191851]">
+                  <h4 className="font-[var(--font-display)] text-sm font-bold uppercase tracking-[0.08em] text-[#241B16] transition-colors group-hover:text-[#8A1538]">
                     {s.name}
                   </h4>
-                  <p className="mt-1 font-[var(--font-serif)] text-[12px] italic text-[#2c2623]/55">{s.sub}</p>
-                  <span className="mt-2 inline-block text-[9px] font-bold uppercase tracking-[0.2em] text-[#b9ad9c]">
+                  <p className="mt-1 font-[var(--font-serif)] text-[12px] italic text-[#241B16]/55">{s.sub}</p>
+                  <span className="mt-2 inline-block text-[9px] font-bold uppercase tracking-[0.2em] text-[#B7A98E]">
                     {s.code}
                   </span>
                 </div>

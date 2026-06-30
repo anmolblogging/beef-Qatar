@@ -25,7 +25,7 @@ export default function CowMini({
         className="absolute inset-0 h-full w-full"
       >
         {polys.map((pts, i) => (
-          <polygon key={i} points={pts} className="fill-[#191851]" />
+          <polygon key={i} points={pts} className="fill-[#8A1538]" />
         ))}
       </svg>
     </div>

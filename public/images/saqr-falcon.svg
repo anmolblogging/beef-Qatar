@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 68" fill="none">
+  <!-- Saqr falcon head — heraldic profile, facing left -->
+  <path fill="#8A1538" d="M64,10 C46,8 33,16 30,28 L11,31 C6,32 5,37 10,38 L22,35 C26,48 40,60 58,62 C74,64 90,54 94,38 C98,20 84,12 64,10 Z"/>
+  <path fill="#C9A24B" d="M38,23 C44,21 50,23 51,28 C52,33 46,35 41,34 C36,33 33,25 38,23 Z"/>
+  <circle cx="43" cy="28" r="2.6" fill="#241B16"/>
+  <path fill="#C9A24B" d="M40,34 C42,42 40,50 35,55 C33,47 35,39 38,34 Z"/>
+</svg>

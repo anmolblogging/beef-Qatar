@@ -126,10 +126,10 @@ export default function BeefCutsHeroCentered() {
 
   const getPathClass = (id: string) => {
     if (selectedCut === id)
-      return "fill-[#191851]/90 stroke-white stroke-[2] cursor-pointer transition-all duration-300";
+      return "fill-[#8A1538]/90 stroke-white stroke-[2] cursor-pointer transition-all duration-300";
     if (blinkId === id)
-      return "fill-[#191851]/60 stroke-white stroke-[2] cursor-pointer transition-all duration-300";
-    return "fill-transparent stroke-white/70 hover:fill-[#191851]/60 hover:stroke-white hover:stroke-[2] cursor-pointer transition-all duration-300";
+      return "fill-[#8A1538]/60 stroke-white stroke-[2] cursor-pointer transition-all duration-300";
+    return "fill-transparent stroke-white/70 hover:fill-[#8A1538]/60 hover:stroke-white hover:stroke-[2] cursor-pointer transition-all duration-300";
   };
 
   const handleCutClick = useCallback(
@@ -170,7 +170,7 @@ export default function BeefCutsHeroCentered() {
     <section
       id="cuts"
       ref={sectionRef}
-      className="w-full relative text-[#2c2623] font-sans antialiased selection:bg-blue-200 flex flex-col items-center overflow-hidden"
+      className="w-full relative text-[#241B16] font-sans antialiased selection:bg-blue-200 flex flex-col items-center overflow-hidden"
     >
       {/* Pasture background now lives in the page-level wrapper so it can run
           continuously from the hero down to the marquee. */}
@@ -180,8 +180,12 @@ export default function BeefCutsHeroCentered() {
 
       {/* ─── Title Block ─── */}
       <div className="reveal max-w-5xl mx-auto px-6 w-full flex flex-col items-center text-center z-20 mb-10 lg:mb-14">
-        <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.5em] text-[#b9ad9c] mb-5">
-          100% Australian Beef
+        <span className="inline-flex items-center gap-2 rounded-full border border-[#8A1538]/25 bg-[#FAF6EF]/70 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#8A1538]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C9A24B]" />
+          100% Halal Certified · ذبيحة
+        </span>
+        <span className="mt-5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.5em] text-[#B7A98E]">
+          Premium Beef &amp; Lamb · لحوم فاخرة
         </span>
       </div>
 
@@ -192,8 +196,8 @@ export default function BeefCutsHeroCentered() {
           aria-hidden="true"
           className="reveal absolute -left-10 top-1/2 -translate-y-1/2 z-0 hidden lg:flex flex-col items-start text-left select-none pointer-events-none max-w-[26rem] pr-10"
         >
-          <h2 className="font-[var(--font-display)] font-semibold uppercase tracking-[0.04em] leading-[1.15] text-[#2c2623]/70 text-[clamp(1.75rem,2.8vw,3rem)] [text-shadow:0_1px_2px_rgba(252,250,246,0.6)]">
-            A <span className="text-[#191851]">Global</span> Leader<br />In Beef Production
+          <h2 className="font-[var(--font-display)] font-semibold uppercase tracking-[0.04em] leading-[1.15] text-[#241B16]/70 text-[clamp(1.75rem,2.8vw,3rem)] [text-shadow:0_1px_2px_rgba(250,246,239,0.6)]">
+            Qatar&apos;s House of <span className="text-[#8A1538]">Premium Halal</span><br />Beef &amp; Lamb
           </h2>
         </div>
 
@@ -216,7 +220,7 @@ export default function BeefCutsHeroCentered() {
           <div className="relative w-full flex items-center justify-center">
             {/* Circular backdrop — centered behind the cow, aligned with the logo */}
             <div
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 aspect-square w-[320px] rounded-full bg-[#f0ebe3]
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 aspect-square w-[320px] rounded-full bg-[#EFE6D6]
                          sm:w-[460px] lg:w-[560px]"
               style={{ transition: "all 0.6s cubic-bezier(.4,0,.2,1)" }}
             />
@@ -309,7 +313,7 @@ export default function BeefCutsHeroCentered() {
                   height="70"
                   viewBox="0 0 120 80"
                   fill="none"
-                  className="text-[#191851] mb-5 select-none pointer-events-none"
+                  className="text-[#8A1538] mb-5 select-none pointer-events-none"
                 >
                   <path
                     d="M110 12 C 100 4, 90 6, 84 16 C 76 30, 78 52, 66 52 C 54 52, 52 30, 62 22 C 72 14, 76 32, 66 44 C 56 56, 36 56, 18 52"
@@ -333,25 +337,25 @@ export default function BeefCutsHeroCentered() {
                 </svg>
 
                 {/* Wavy accent line */}
-                <svg width="50" height="8" viewBox="0 0 50 8" className="text-[#191851] mb-4">
+                <svg width="50" height="8" viewBox="0 0 50 8" className="text-[#8A1538] mb-4">
                   <path d="M0 4 Q 6 0, 12 4 T 24 4 T 36 4 T 50 4" stroke="currentColor" strokeWidth="2" fill="none" />
                 </svg>
 
-                <p className="font-[var(--font-serif)] italic text-[13px] lg:text-[15px] text-[#2c2623]/75 leading-relaxed">
-                  <strong className="not-italic text-[#191851] font-sans font-bold uppercase tracking-[0.2em] text-[10px] block">
+                <p className="font-[var(--font-serif)] italic text-[13px] lg:text-[15px] text-[#241B16]/75 leading-relaxed">
+                  <strong className="not-italic text-[#8A1538] font-sans font-bold uppercase tracking-[0.2em] text-[10px] block">
                     Select a primal cut
                   </strong>
                 </p>
               </div>
             ) : (
               <div className="pl-2">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#b9ad9c] block mb-1">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#B7A98E] block mb-1">
                   Selected
                 </span>
-                <span className="text-lg font-[var(--font-display)] font-bold uppercase tracking-[0.15em] text-[#191851]">
+                <span className="text-lg font-[var(--font-display)] font-bold uppercase tracking-[0.15em] text-[#8A1538]">
                   {activeCutDetails?.title}
                 </span>
-                <p className="font-[var(--font-serif)] italic text-xs text-[#2c2623]/60 mt-2 leading-relaxed">
+                <p className="font-[var(--font-serif)] italic text-xs text-[#241B16]/60 mt-2 leading-relaxed">
                   Scroll down to view the retail steaks available from this primal cut.
                 </p>
               </div>
@@ -363,11 +367,11 @@ export default function BeefCutsHeroCentered() {
       {/* ─── Mobile Prompt ─── */}
       {!selectedCut && (
         <div className="md:hidden flex flex-col items-center text-center mt-6 px-6 mb-8">
-          <svg width="50" height="8" viewBox="0 0 50 8" className="text-[#191851] mb-4">
+          <svg width="50" height="8" viewBox="0 0 50 8" className="text-[#8A1538] mb-4">
             <path d="M0 4 Q 6 0, 12 4 T 24 4 T 36 4 T 50 4" stroke="currentColor" strokeWidth="2" fill="none" />
           </svg>
-          <p className="font-[var(--font-serif)] italic text-sm text-[#2c2623]/75 leading-relaxed max-w-xs">
-            <strong className="not-italic text-[#191851] font-sans font-bold uppercase tracking-[0.2em] text-[10px] block mb-1.5">
+          <p className="font-[var(--font-serif)] italic text-sm text-[#241B16]/75 leading-relaxed max-w-xs">
+            <strong className="not-italic text-[#8A1538] font-sans font-bold uppercase tracking-[0.2em] text-[10px] block mb-1.5">
               Select a primal cut
             </strong>
             from the diagram to explore its retail steaks.
@@ -390,11 +394,11 @@ export default function BeefCutsHeroCentered() {
       >
         {panelDetails && (
           <div className="max-w-6xl mx-auto px-6 pt-16 pb-20">
-            <div className="w-full bg-[#1c1a19] text-white p-8 sm:p-10 lg:p-12 shadow-2xl rounded-lg">
+            <div className="w-full bg-[#1A130F] text-white p-8 sm:p-10 lg:p-12 shadow-2xl rounded-lg">
               {/* Panel Header */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-6 mb-8">
                 <div>
-                  <span className="text-[#fff10b] text-[10px] font-bold tracking-[0.25em] uppercase block mb-1.5">
+                  <span className="text-[#C9A24B] text-[10px] font-bold tracking-[0.25em] uppercase block mb-1.5">
                     Retail Cuts
                   </span>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-[var(--font-display)] font-light tracking-[0.18em] uppercase text-white">
@@ -407,7 +411,7 @@ export default function BeefCutsHeroCentered() {
                   aria-label="Close details"
                 >
                   <span>Close</span>
-                  <X className="w-5 h-5 border border-neutral-700 rounded-full p-0.5 group-hover:border-[#fff10b] group-hover:text-[#fff10b] transition-all duration-300" />
+                  <X className="w-5 h-5 border border-neutral-700 rounded-full p-0.5 group-hover:border-[#C9A24B] group-hover:text-[#C9A24B] transition-all duration-300" />
                 </button>
               </div>
 
@@ -431,7 +435,7 @@ export default function BeefCutsHeroCentered() {
                           transition: `opacity 0.5s ease ${idx * 0.08}s, transform 0.5s ease ${idx * 0.08}s`,
                         }}
                       >
-                        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-neutral-800 mb-4 border-2 border-neutral-700/50 group-hover:border-[#fff10b] transition-all duration-500 shadow-lg">
+                        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-neutral-800 mb-4 border-2 border-neutral-700/50 group-hover:border-[#C9A24B] transition-all duration-500 shadow-lg">
                           <img
                             src={item.img}
                             alt={item.name}
@@ -445,7 +449,7 @@ export default function BeefCutsHeroCentered() {
                         <span className="text-[10px] sm:text-[11px] text-neutral-500 mt-0.5 font-[var(--font-serif)] italic">
                           {item.sub}
                         </span>
-                        <span className="mt-2 text-[8px] font-bold uppercase tracking-[0.2em] text-[#fff10b] opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="mt-2 text-[8px] font-bold uppercase tracking-[0.2em] text-[#C9A24B] opacity-0 group-hover:opacity-100 transition-opacity">
                           View cut →
                         </span>
                       </Link>
@@ -455,13 +459,13 @@ export default function BeefCutsHeroCentered() {
 
                 {/* Left fade + arrow — appears once scrolled away from the start */}
                 <div
-                  className={`pointer-events-none absolute left-0 top-0 bottom-2 flex items-center justify-start pr-12 bg-gradient-to-r from-[#1c1a19] via-[#1c1a19]/85 to-transparent transition-opacity duration-300 ${canScrollLeft ? "opacity-100" : "opacity-0"}`}
+                  className={`pointer-events-none absolute left-0 top-0 bottom-2 flex items-center justify-start pr-12 bg-gradient-to-r from-[#1A130F] via-[#1A130F]/85 to-transparent transition-opacity duration-300 ${canScrollLeft ? "opacity-100" : "opacity-0"}`}
                 >
                   <button
                     type="button"
                     onClick={() => scrollSteaks(-1)}
                     aria-label="Show previous cuts"
-                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 bg-[#1c1a19] text-neutral-300 hover:border-[#fff10b] hover:text-[#fff10b] transition-colors shadow-lg"
+                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 bg-[#1A130F] text-neutral-300 hover:border-[#C9A24B] hover:text-[#C9A24B] transition-colors shadow-lg"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M15 18l-6-6 6-6" />
@@ -471,13 +475,13 @@ export default function BeefCutsHeroCentered() {
 
                 {/* Right fade + arrow — indicates more cuts are available */}
                 <div
-                  className={`pointer-events-none absolute right-0 top-0 bottom-2 flex items-center justify-end pl-12 bg-gradient-to-l from-[#1c1a19] via-[#1c1a19]/85 to-transparent transition-opacity duration-300 ${canScrollRight ? "opacity-100" : "opacity-0"}`}
+                  className={`pointer-events-none absolute right-0 top-0 bottom-2 flex items-center justify-end pl-12 bg-gradient-to-l from-[#1A130F] via-[#1A130F]/85 to-transparent transition-opacity duration-300 ${canScrollRight ? "opacity-100" : "opacity-0"}`}
                 >
                   <button
                     type="button"
                     onClick={() => scrollSteaks(1)}
                     aria-label="Show more cuts"
-                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 bg-[#1c1a19] text-neutral-300 hover:border-[#fff10b] hover:text-[#fff10b] transition-colors shadow-lg"
+                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 bg-[#1A130F] text-neutral-300 hover:border-[#C9A24B] hover:text-[#C9A24B] transition-colors shadow-lg"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M9 18l6-6-6-6" />

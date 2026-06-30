@@ -1,3 +1,32 @@
 {
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+
+  // ── Memory-saving settings for low-RAM (8 GB) machines ──
+  // Stop VS Code from watching/indexing huge generated folders. This alone
+  // frees a lot of RAM and CPU from the file watcher.
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.git/**": true,
+    "**/tsconfig.tsbuildinfo": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/package-lock.json": true,
+    "**/tsconfig.tsbuildinfo": true
+  },
+
+  // Cap the TypeScript language server so it can't balloon to 3 GB.
+  "typescript.tsserver.maxTsServerMemory": 2048,
+  "typescript.disableAutomaticTypeAcquisition": true,
+
+  // This is a JavaScript/TypeScript project — turn off the Python language
+  // server (Pylance) so it stops loading in this workspace and eating RAM.
+  "python.languageServer": "None",
+  "python.analysis.autoImportCompletions": false,
+
+  // Trim background work.
+  "telemetry.telemetryLevel": "off",
+  "git.autorefresh": false
 }

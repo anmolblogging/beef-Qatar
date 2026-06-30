@@ -1,36 +1,41 @@
 import type { Metadata } from "next";
-import { Oswald, PT_Serif, Roboto } from "next/font/google";
+import { Fraunces, Lora, Inter } from "next/font/google";
 import "./globals.css";
 
-const oswald = Oswald({
+// Display — premium editorial serif (replaces the old condensed sans)
+const fraunces = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "900"],
+  style: ["normal", "italic"],
 });
 
-const ptSerif = PT_Serif({
+const lora = Lora({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
-const roboto = Roboto({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "ACC — Marbled Beef of the Highest Quality",
-  description: "ACC — premium marbled beef raised with care in ecologically clean regions.",
+  title: "Saqr — Premium Halal Meats of Qatar",
+  description:
+    "Saqr (صقر) — premium, 100% Halal-certified beef and lamb, butchered and delivered across Qatar. Source to table, with a single standard of excellence.",
   icons: {
-    icon: "/images/acc-logo.svg",
-    shortcut: "/images/acc-logo.svg",
-    apple: "/images/acc-logo.svg",
+    icon: "/images/saqr-emblem.svg",
+    shortcut: "/images/saqr-emblem.svg",
+    apple: "/images/saqr-emblem.svg",
   },
   openGraph: {
-    title: "ACC — Marbled Beef",
-    description: "ACC — premium marbled beef of the highest quality.",
+    title: "Saqr — Premium Halal Meats",
+    description:
+      "Premium, 100% Halal-certified beef and lamb for Qatar — source to table.",
     type: "website",
   },
 };
@@ -43,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${oswald.variable} ${ptSerif.variable} ${roboto.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${lora.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
