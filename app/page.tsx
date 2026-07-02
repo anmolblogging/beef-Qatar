@@ -178,16 +178,55 @@ export default function Home() {
           </div>
         </div>
 
-        {/* numbered stepper — swipeable carousel on mobile, static grid on sm+ */}
-        <div className="reveal mt-16 border-t border-[#8A1538]/15 pt-10">
-          <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5">
-            {["Trusted Farms", "Halal Slaughter", "Master Butchers", "Cold Chain", "Doha Delivery"].map((step, i) => (
-              <div key={step} className="relative flex w-[70%] shrink-0 snap-start flex-col gap-3 sm:w-auto sm:shrink lg:pr-6">
-                <span className="font-[var(--font-display)] text-3xl font-bold text-[#8A1538]/25">0{i + 1}</span>
-                <span className="font-[var(--font-display)] text-sm font-bold uppercase tracking-[0.1em] text-[#241B16]">{step}</span>
-                {i < 4 && <span aria-hidden className="absolute right-0 top-4 hidden h-px w-6 bg-[#C9A24B] lg:block" />}
-              </div>
-            ))}
+        {/* process flow — swipeable carousel on mobile, connected grid on lg+ */}
+        <div className="reveal mt-16 border-t border-[#8A1538]/15 pt-12">
+          <div className="mb-8 flex items-center gap-3">
+            <span className="font-[var(--font-display)] text-[12px] font-bold uppercase tracking-[0.4em] text-[#8A1538]">
+              From Farm to Door
+            </span>
+            <span className="h-px w-12 bg-[#C9A24B]" />
+            <span className="font-[var(--font-serif)] text-sm text-[#C9A24B]">من المزرعة إلى بابك</span>
+          </div>
+          <div className="relative">
+            {/* continuous baseline that the numbers sit on (lg+) */}
+            <div
+              aria-hidden
+              className="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-[#8A1538]/20 via-[#C9A24B]/40 to-[#8A1538]/20 lg:block"
+            />
+            <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5">
+              {[
+                { t: "Trusted Farms", d: "Cattle & lamb raised on pasture by long-standing partner farms.", ar: "مزارع موثوقة" },
+                { t: "Halal Slaughter", d: "Certified Zabiha process, supervised at every step.", ar: "ذبح حلال" },
+                { t: "Master Butchers", d: "Precision cuts prepared by hand for each order.", ar: "جزارة متقنة" },
+                { t: "Cold Chain", d: "Unbroken chilled handling that locks in freshness.", ar: "سلسلة تبريد" },
+                { t: "Doha Delivery", d: "Fast, careful delivery to your door across Qatar.", ar: "توصيل الدوحة" },
+              ].map((step, i) => (
+                <div
+                  key={step.t}
+                  className="group relative flex w-[78%] shrink-0 snap-start flex-col gap-4 rounded-lg border border-[#8A1538]/10 bg-white/40 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A24B]/50 hover:bg-white hover:shadow-[0_24px_40px_-28px_rgba(138,21,56,0.45)] sm:w-auto sm:shrink"
+                >
+                  {/* number badge sitting on the baseline */}
+                  <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-[#C9A24B]/50 bg-[#FAF6EF] font-[var(--font-display)] text-xl font-bold text-[#8A1538] shadow-sm transition-colors duration-300 group-hover:border-[#8A1538] group-hover:bg-[#8A1538] group-hover:text-[#FAF6EF]">
+                    0{i + 1}
+                  </span>
+                  <div className="space-y-1.5">
+                    <span className="block font-[var(--font-display)] text-sm font-bold uppercase tracking-[0.1em] text-[#241B16]">
+                      {step.t}
+                    </span>
+                    <span className="block font-[var(--font-serif)] text-[13px] leading-relaxed text-[#241B16]/60">
+                      {step.d}
+                    </span>
+                  </div>
+                  {/* connecting arrow between steps (lg+) */}
+                  {i < 4 && (
+                    <span
+                      aria-hidden
+                      className="absolute -right-2.5 top-7 z-10 hidden h-2 w-2 -translate-y-1/2 rotate-45 border-r border-t border-[#C9A24B] bg-[#FAF6EF] lg:block"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

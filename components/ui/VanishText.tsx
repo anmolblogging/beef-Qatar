@@ -40,9 +40,10 @@ export default function VanishText({
     if (typeof node === "string" || typeof node === "number") {
       return String(node)
         .split(/(\s+)/)
-        .map((part) => {
+        .map((part, partIdx) => {
           if (part === "") return null;
-          if (/^\s+$/.test(part)) return part; // keep spacing as plain text
+          if (/^\s+$/.test(part))
+            return <React.Fragment key={`s${partIdx}`}>{part}</React.Fragment>; // keep spacing as plain text
           const i = idx++;
           return (
             <span key={i} className="vanish-word" style={{ transitionDelay: i * step + "ms" }}>
@@ -51,7 +52,8 @@ export default function VanishText({
           );
         });
     }
-    if (Array.isArray(node)) return node.map((n) => render(n));
+    if (Array.isArray(node))
+      return node.map((n, i) => <React.Fragment key={i}>{render(n)}</React.Fragment>);
     if (React.isValidElement(node)) {
       const el = node as React.ReactElement<{ children?: React.ReactNode }>;
       return React.cloneElement(el, { ...el.props }, render(el.props.children));
